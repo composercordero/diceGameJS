@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="row">
+    
+    <div class="col-8">
+        <div class="row">
+            <div class="col-12">
+                <h1>Let's roll the dice</h1>
+            </div>
+        </div>
+        <div class="row text-center">
+            <div class="col-2"><h1 id="one" class="display-1 dice">&#9856;</h1></div>
+            <div class="col-2"><h1 class="display-1 dice">&#9857;</h1></div>
+            <div class="col-2"><h1 class="display-1 dice">&#9858;</h1></div>
+            <div class="col-2"><h1 class="display-1 dice">&#9859;</h1></div>
+            <div class="col-2"><h1 class="display-1 dice">&#9860;</h1></div>
+            <div class="col-2"><h1 class="display-1 dice">&#9861;</h1></div>
+        </div>
+
+        <div class="row pt-5">
+            <div class="col-6">
+                <button type="button" class="btn btn-outline-success" id="roll">Roll the dice</button>
+            </div>
+            <div class="col-6">
+                <button type="button" class="btn btn-outline-danger" id="reset">Start Over</button>  
+            </div>
+            
+            
+        </div>
+
+        <div class="row pt-5">
+            <div class="col-6">
+                <div id="score">This round:</div>
+            </div>
+
+            <div class="col-6">
+                <div id="total">Total:</div>
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="col-4">Rules</div>
+
+</div>
+
+
+
+
+
+
+{% endblock content %}

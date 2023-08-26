@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="col-12">
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">Name</th>
+          <th scope="col">Score</th>
+          <th scope="col">Turns</th>
+        </tr>
+      </thead>
+    
+      <tbody>
+        {% for user in users %}
+            <tr>
+            <th scope="row">{{ user.first_name }} {{ user.last_name }}</th>
+            <td>{{ user.points }}</td>
+            <td>{{ user.turns }}</td>
+            </tr>
+        {% endfor %}
+      </tbody>
+    
+    </table>
+    </div>
+
+{% endblock content %}
