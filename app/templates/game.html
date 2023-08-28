@@ -70,11 +70,11 @@
     </div> 
     <div class="col-3 m-2">
     {{ form.points.label }}
-    {{ form.points(id ='points-form', class='form-control', placeholder='Enter Total Points') }}
+    {{ form.points(id ='points-form', class='form-control', placeholder='Enter Total Points', readonly ='readonly') }}
     </div>
     <div class="col-3 m-2">
     {{ form.turns.label }}
-    {{ form.turns(id='turns-form', class='form-control', placeholder='Enter Total Turns') }}
+    {{ form.turns(id='turns-form', class='form-control', placeholder='Enter Total Turns', readonly ='readonly') }}
     </div>
     <div class="col-3 m-2 mt-3">
     {{ form.submit(id = 'leaderboard', class='btn btn-warning mt-3')}}
