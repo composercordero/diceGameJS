@@ -64,7 +64,7 @@ def game():
 
     form = PointsForm()
     if form.validate_on_submit():
-        current_user.points = f'{int(form.points.data):,d}'
+        current_user.points = int(form.points.data)
         current_user.turns = form.turns.data
         
         db.session.commit()
