@@ -1,6 +1,6 @@
 from app import app, db
 from flask import render_template, redirect, url_for, flash, request
-from app.forms import LoginForm, SignUpForm
+from app.forms import LoginForm, SignUpForm, PointsForm
 from app.models import User
 from flask_login import login_user, logout_user, login_required, current_user
 
@@ -61,4 +61,14 @@ def home():
 
 @app.route('/game', methods = ['GET', 'POST'])
 def game():
-    return render_template('game.html')
+
+    form = PointsForm()
+    if form.validate_on_submit():
+        current_user.points = f'{int(form.points.data):,d}'
+        current_user.turns = form.turns.data
+        
+        db.session.commit()
+        flash(f'Congrats, {current_user.first_name} {current_user.last_name}. Your points have been submitted.', 'success')
+        return redirect(url_for('home'))
+
+    return render_template('game.html', form = form, current_user = current_user)
