@@ -97,7 +97,7 @@ function checkPoints(){
 
     totalShow.innerHTML = `Total Points: ${totalPoints}`;
     
-    if(totalPoints >= 1000){
+    if(totalPoints >= 10000){
         gameTitle.innerText = `Congrats! You won in ${clicked} turns.`;
         pointsForm.value = totalPoints;
         turnsForm.value = clicked;
