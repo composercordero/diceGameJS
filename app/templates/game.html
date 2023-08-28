@@ -32,7 +32,7 @@
 
         <div class="row pt-5">
             <div class="col-6">
-                <div id="score">This round: 0</div>
+                <div id="points-round">This round: 0</div>
             </div>
 
             <div class="col-6">
@@ -70,14 +70,14 @@
     </div> 
     <div class="col-3 m-2">
     {{ form.points.label }}
-    {{ form.points(class='form-control', placeholder='Enter Total Points') }}
+    {{ form.points(id ='points-form', class='form-control', placeholder='Enter Total Points') }}
     </div>
     <div class="col-3 m-2">
     {{ form.turns.label }}
-    {{ form.turns(class='form-control', placeholder='Enter Total Turns') }}
+    {{ form.turns(id='turns-form', class='form-control', placeholder='Enter Total Turns') }}
     </div>
     <div class="col-3 m-2 mt-3">
-    {{ form.submit(class='btn btn-warning mt-3')}}
+    {{ form.submit(id = 'leaderboard', class='btn btn-warning mt-3')}}
     </div>
   </form>
 

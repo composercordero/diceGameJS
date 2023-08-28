@@ -4,8 +4,12 @@ const rollBtn = document.getElementById('roll');
 const resetBtn = document.getElementById('reset')
 const dice = document.getElementsByClassName("dice");
 const gameTitle = document.getElementById('game_title')
-const scoreShow = document.getElementById('score')
+const pointsShow = document.getElementById('points-round')
 const totalShow = document.getElementById('total')
+const pointsForm = document.getElementById('points-form')
+const turnsForm = document.getElementById('turns-form')
+
+// CREATE ELEMENTS
 
 let count = {1:0, 2:0, 3:0, 4:0, 5:0, 6:0};
 let totalPoints = 0;
@@ -77,7 +81,7 @@ function checkPoints(){
         }
     }
 
-    scoreShow.innerHTML = `This round: ${roundPoints}`;
+    pointsShow.innerHTML = `This round: ${roundPoints}`;
 
     console.log(count)
     count = {1:0, 2:0, 3:0, 4:0, 5:0, 6:0};   
@@ -93,8 +97,11 @@ function checkPoints(){
 
     totalShow.innerHTML = `Total Points: ${totalPoints}`;
     
-    if(totalPoints >= 10000){
+    if(totalPoints >= 1000){
         gameTitle.innerText = `Congrats! You won in ${clicked} turns.`;
+        pointsForm.value = totalPoints;
+        turnsForm.value = clicked;
+        document.getElementById("leaderboard").click();
         console.log('Congratulations!')
         console.log(`You won in ${clicked} turns.`)
         
@@ -107,7 +114,7 @@ function reset(){
     gameTitle.innerText = `Good Luck!`;
     clicked = 0;
     roundPoints = 0;
-    scoreShow.innerHTML = `This round: ${roundPoints}`;
+    pointsShow.innerHTML = `This round: ${roundPoints}`;
     totalPoints = 0;
     totalShow.innerHTML = `Total Points: ${totalPoints}`;
     diceNum = 9856

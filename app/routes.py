@@ -36,7 +36,7 @@ def index():
             flash('A user with that username already exists', 'danger')
             return redirect(url_for('index'))
         
-        new_user = User(first_name = first_name, last_name = last_name, username = username, email = email, password = password)
+        new_user = User(first_name = first_name, last_name = last_name, username = username, email = email, password = password, points = 0, turns = 0)
 
         db.session.add(new_user)
         db.session.commit()
