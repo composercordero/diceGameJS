@@ -20,4 +20,4 @@ class PointsForm(FlaskForm):
     username = StringField('Username', validators=[InputRequired()])
     points = StringField('Total Points', validators=[InputRequired()])
     turns = StringField('Total Turns', validators=[InputRequired()])
-    submit = SubmitField('Sign Up')
+    submit = SubmitField('Submit Points')
